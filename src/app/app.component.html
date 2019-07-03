@@ -20,21 +20,33 @@
 
 <!--<router-outlet></router-outlet>-->
 
-<table>
-  <!--<thead>-->
-  <!--<tr>-->
-    <!--<th></th>-->
-    <!--<th>列車進入月台車站之站名</th>-->
-    <!--<th>行駛目的地</th>-->
-    <!--<th>資料更新日期</th>-->
-  <!--</tr>-->
-  <!--</thead>-->
-  <tbody>
-  <tr *ngFor="let item of list; let i = index">
-    <td>{{ i+1 }}</td>
-    <td>{{ item.Station }}</td>
-    <td>{{ item.Destination }}</td>
-    <td>{{ item.UpdateTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-  </tr>
-  </tbody>
-</table>
+<h1>Hello</h1>
+<form (ngSubmit)="addMessage()">
+  <p>
+    名稱:<input type="text" name="name1" [(ngModel)]="name1">
+  </p>
+
+  <p>
+    內容:<input type="text" name="content" [(ngModel)]="content">
+  </p>
+
+  <p>
+    <button type="submit">新增留言</button>
+  </p>
+</form>
+
+<ng-container *ngFor="let message of messages">
+  <p>
+    留言人: {{ message.name1 }}
+  </p>
+
+  <p>
+    訊息內容: {{ message.content }}
+  </p>
+
+  <p>
+    時間: {{ message.date | date: 'yyyy/MM/dd HH:mm:ss'}}
+  </p>
+</ng-container>
+
+
