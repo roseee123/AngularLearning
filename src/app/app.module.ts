@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+
+import {TodoListModule} from './todo-list/todo-list.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    TodoListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
