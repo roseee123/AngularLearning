@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Todo} from './todo.model';
+import {TodoStatusType} from './todo-status-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,13 @@ export class TodoListService {
 
   remove(index: number): void {
     this.list.splice(index, 1);
+  }
+
+  removeCompleted(): void {
+    this.list = this.getWithCompleted(false);
+  }
+
+  getWithCompleted(completed: boolean): Todo[] {
+    return this.list.filter(todo => todo.done === completed);
   }
 }

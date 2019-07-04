@@ -23,4 +23,7 @@ export class Todo {
   setTitle(title: string): void {
     this.title = title;
   }
+  setCompleted(completed: boolean): void {
+    this.completed = completed;
+  }
 }
